@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_table_reserveds",
+  "info": {
+    "name": "Event Table Reserved",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "zone_id": {
+      "type": "biginteger",
+      "required": false
+    },
+    "round_id": {
+      "type": "biginteger"
+    },
+    "table_number": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "event": {
+      "model": "event"
+    },
+    "event_transaction": {
+      "via": "event_table_reserveds",
+      "model": "event-transaction"
+    },
+    "req_trans_id": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

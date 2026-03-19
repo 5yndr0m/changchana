@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_landing_page_faqs",
+  "info": {
+    "name": "faq",
+    "icon": "question-circle"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

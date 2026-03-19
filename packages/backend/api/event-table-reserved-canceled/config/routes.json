@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/event-table-reserved-canceleds",
+      "handler": "event-table-reserved-canceled.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/event-table-reserved-canceleds/count",
+      "handler": "event-table-reserved-canceled.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/event-table-reserved-canceleds/:id",
+      "handler": "event-table-reserved-canceled.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/event-table-reserved-canceleds",
+      "handler": "event-table-reserved-canceled.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/event-table-reserved-canceleds/:id",
+      "handler": "event-table-reserved-canceled.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/event-table-reserved-canceleds/:id",
+      "handler": "event-table-reserved-canceled.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

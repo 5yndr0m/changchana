@@ -1,0 +1,25 @@
+{
+  "collectionName": "table-image",
+  "info": {
+    "name": "table-image",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "index": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

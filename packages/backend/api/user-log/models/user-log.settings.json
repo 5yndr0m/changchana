@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_logs",
+  "info": {
+    "name": "User Log",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "branch": {
+      "model": "branch"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "datetime": {
+      "type": "datetime"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "checked_in",
+        "checked_out"
+      ],
+      "required": true
+    }
+  }
+}

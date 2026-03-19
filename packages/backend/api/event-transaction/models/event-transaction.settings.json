@@ -1,0 +1,108 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_transaction",
+  "info": {
+    "name": "Event transaction",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "event_id": {
+      "type": "string",
+      "required": true
+    },
+    "payment_charge_id": {
+      "type": "string",
+      "unique": true
+    },
+    "payment_transaction_id": {
+      "type": "string",
+      "unique": true
+    },
+    "payment_created": {
+      "type": "datetime"
+    },
+    "payment_card_id": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal",
+      "default": 0,
+      "required": true,
+      "min": 0
+    },
+    "net_amount": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "fee": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "fee_vat": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "points": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "expired",
+        "failed",
+        "reversed",
+        "successful",
+        "refunded",
+        "partial_refunded"
+      ],
+      "default": "pending",
+      "required": true
+    },
+    "event_table_reserveds": {
+      "via": "event_transaction",
+      "collection": "event-table-reserved"
+    },
+    "payment_refund_transaction_id": {
+      "type": "string"
+    },
+    "payment_refuned_at": {
+      "type": "datetime"
+    },
+    "req_trans_id": {
+      "type": "string",
+      "required": true
+    },
+    "round_id": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "payment_failure_code": {
+      "type": "string"
+    },
+    "payment_failure_message": {
+      "type": "text"
+    }
+  }
+}

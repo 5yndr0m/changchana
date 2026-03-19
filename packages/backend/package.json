@@ -1,0 +1,49 @@
+{
+  "name": "chongjaroen-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "dev": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "json-2-csv": "3.14.1",
+    "knex": "0.21.18",
+    "messagebird": "3.6.1",
+    "moment": "2.29.1",
+    "moment-timezone": "^0.5.43",
+    "mysql2": "^2.3.3",
+    "omise": "0.8.5",
+    "onesignal-node": "3.3.0",
+    "qrcode": "1.4.4",
+    "randomstring": "1.1.5",
+    "sharp": "0.32.5",
+    "strapi": "3.6.8",
+    "strapi-admin": "3.6.8",
+    "strapi-connector-bookshelf": "3.6.8",
+    "strapi-plugin-ckeditor5": "1.10.0",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-documentation": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-provider-email-nodemailer": "3.6.0",
+    "strapi-provider-upload-do": "3.6.6",
+    "strapi-utils": "3.6.8"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "fab46081-b43a-4c58-a521-1968bd3fe136"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^8.0.0"
+  },
+  "license": "MIT"
+}

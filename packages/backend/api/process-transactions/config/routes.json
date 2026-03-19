@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/process-transactions",
+      "handler": "process-transactions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/process-transactions/count",
+      "handler": "process-transactions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/process-transactions/:id",
+      "handler": "process-transactions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/process-transactions",
+      "handler": "process-transactions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/process-transactions/:id",
+      "handler": "process-transactions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/process-transactions/:id",
+      "handler": "process-transactions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

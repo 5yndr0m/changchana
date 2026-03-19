@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_website_settings_footers",
+  "info": {
+    "name": "footer",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "text"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "website-settings.socials"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/atk-management",
+      "handler": "atk-management.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/atk-management",
+      "handler": "atk-management.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/atk-management",
+      "handler": "atk-management.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

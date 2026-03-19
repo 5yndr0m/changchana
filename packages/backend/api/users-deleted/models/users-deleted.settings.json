@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users_deleted",
+  "info": {
+    "name": "Users Deleted",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 30
+    }
+  }
+}

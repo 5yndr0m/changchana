@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_event_zones_zones",
+  "info": {
+    "name": "zones",
+    "icon": "map-signs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "points": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "number_of_table": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    },
+    "text_color": {
+      "type": "string",
+      "default": "#FFFFFF",
+      "maxLength": 20
+    },
+    "bg_color": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "description": {
+      "type": "string"
+    },
+    "table_images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event-component.table-image"
+    }
+  }
+}

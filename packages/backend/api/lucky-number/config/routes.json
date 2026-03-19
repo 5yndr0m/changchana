@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/lucky-numbers",
+      "handler": "lucky-number.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/lucky-numbers/count",
+      "handler": "lucky-number.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/lucky-numbers/:id",
+      "handler": "lucky-number.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/lucky-numbers",
+      "handler": "lucky-number.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/lucky-numbers/:id",
+      "handler": "lucky-number.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/lucky-numbers/:id",
+      "handler": "lucky-number.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

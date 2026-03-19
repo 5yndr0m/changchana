@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_landing_page_heroes",
+  "info": {
+    "name": "hero",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.hero-features",
+      "max": 3
+    }
+  }
+}

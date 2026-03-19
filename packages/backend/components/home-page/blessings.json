@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_page_blessings",
+  "info": {
+    "name": "blessings",
+    "icon": "apple-alt"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

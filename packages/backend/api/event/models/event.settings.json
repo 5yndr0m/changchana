@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "cover_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "stage_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "branch": {
+      "model": "branch"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "concert",
+        "party",
+        "festival"
+      ],
+      "default": "concert",
+      "required": true
+    },
+    "limit_per_user": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "rounds": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event-component.event-rounds"
+    },
+    "zones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event-component.zones"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "selling_type": {
+      "type": "enumeration",
+      "enum": [
+        "ticket",
+        "walk_in"
+      ],
+      "default": "ticket",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "comming_soon",
+        "publish",
+        "walk_in",
+        "sold_out"
+      ],
+      "default": "comming_soon",
+      "required": true
+    }
+  }
+}

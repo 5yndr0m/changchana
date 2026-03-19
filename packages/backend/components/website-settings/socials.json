@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_website_settings_socials",
+  "info": {
+    "name": "socials",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

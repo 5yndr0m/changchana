@@ -1,0 +1,22 @@
+// $color-primary: #1A7A89;
+// $color-secondary: #065461;
+// $color-teal: #1A7A89;
+
+// $primary-color: #1A7A89;
+// $warning-color: #FBBF24;
+// $success-color: #10B981;
+// $error-color: #DC2626;
+// // $dark-color: red;
+// // @import 'spectre.css/dist/spectre.css'
+// @import "../../node_modules/spectre.css/dist/spectre-exp.min.css";
+// @import "../../node_modules/spectre.css/dist/spectre-icons.min.css";
+// @import "../../node_modules/spectre.css/src/spectre.scss";
+
+@import "../../node_modules/vue-sliding-pagination/dist/style/vue-sliding-pagination.css";
+
+$vs-dropdown-max-height: 150px;
+$vs-component-line-height: 1.7;
+$vs-border-color: #bcc3ce;
+$vs-dropdown-box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05),0 2px 4px -1px rgba(0,0,0,0.02);
+
+@import "../../node_modules/vue-multiselect/dist/vue-multiselect.min.css";

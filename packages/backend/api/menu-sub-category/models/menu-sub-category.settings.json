@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_sub_categories",
+  "info": {
+    "name": "Menu Sub Category",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "menu_category": {
+      "via": "menu_sub_categories",
+      "model": "menu-category"
+    },
+    "menus": {
+      "via": "menu_sub_category",
+      "collection": "menu"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "Booking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "approved",
+        "pending",
+        "reject",
+        "cancelled",
+        "waiting"
+      ],
+      "default": "pending"
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "people_amount": {
+      "type": "integer"
+    },
+    "user": {
+      "via": "bookings",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "branch": {
+      "model": "branch"
+    },
+    "remark": {
+      "type": "text"
+    },
+    "user_status": {
+      "type": "enumeration",
+      "enum": [
+        "come",
+        "not_coming",
+        "late"
+      ]
+    },
+    "approved_at": {
+      "type": "datetime"
+    }
+  }
+}

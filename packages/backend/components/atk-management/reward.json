@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_atk_management_rewards",
+  "info": {
+    "name": "Reward",
+    "icon": "gift",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "branch": {
+      "unique": true,
+      "model": "branch"
+    },
+    "points": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

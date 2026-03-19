@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_website_settings_call_to_actions",
+  "info": {
+    "name": "call_to_action",
+    "icon": "ankh"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

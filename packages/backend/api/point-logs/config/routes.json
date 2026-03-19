@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/point-logs",
+      "handler": "point-logs.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/point-logs/count",
+      "handler": "point-logs.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/point-logs/:id",
+      "handler": "point-logs.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/point-logs",
+      "handler": "point-logs.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/point-logs/:id",
+      "handler": "point-logs.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/point-logs/:id",
+      "handler": "point-logs.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

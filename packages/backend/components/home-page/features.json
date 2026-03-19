@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_home_page_features",
+  "info": {
+    "name": "features",
+    "icon": "arrow-alt-circle-left"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "app_features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home-page.app-features"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vaccinateds",
+  "info": {
+    "name": "Vaccinated"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "files": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "confirm": {
+      "type": "boolean"
+    }
+  }
+}

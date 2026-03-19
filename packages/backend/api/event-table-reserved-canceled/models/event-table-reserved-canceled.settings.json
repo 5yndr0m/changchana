@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_table_reserved_canceleds",
+  "info": {
+    "name": "Event Table Reserved Canceled",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "zone_id": {
+      "type": "integer"
+    },
+    "round_id": {
+      "type": "integer"
+    },
+    "table_number": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "event_transaction_id": {
+      "type": "string"
+    },
+    "req_trans_id": {
+      "type": "string"
+    },
+    "remark": {
+      "type": "text"
+    }
+  }
+}

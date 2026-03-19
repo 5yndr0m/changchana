@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/cron-tasks",
+      "handler": "cron-tasks.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cron-tasks/count",
+      "handler": "cron-tasks.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cron-tasks/:id",
+      "handler": "cron-tasks.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/cron-tasks",
+      "handler": "cron-tasks.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/cron-tasks/:id",
+      "handler": "cron-tasks.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/cron-tasks/:id",
+      "handler": "cron-tasks.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

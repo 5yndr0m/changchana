@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "branches",
+  "info": {
+    "name": "Branch",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "line": {
+      "type": "string"
+    },
+    "cover_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "google_map": {
+      "type": "text"
+    },
+    "menu_categories": {
+      "collection": "menu-category",
+      "via": "branches",
+      "dominant": true
+    },
+    "menus": {
+      "collection": "menu",
+      "via": "branches"
+    },
+    "apple_map": {
+      "type": "text"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "booking_remarks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "branch.booking-remarks"
+    },
+    "opening_time": {
+      "type": "time",
+      "required": false
+    },
+    "closing_time": {
+      "type": "time",
+      "required": false
+    }
+  }
+}

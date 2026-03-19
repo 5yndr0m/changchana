@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_page_contents",
+  "info": {
+    "name": "contents",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

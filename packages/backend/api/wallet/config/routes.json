@@ -1,0 +1,116 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/wallet/balance",
+      "handler": "wallet.getBalance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wallet/transactions",
+      "handler": "wallet.getTransactions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet/top-up",
+      "handler": "wallet.topUp",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet/pay",
+      "handler": "wallet.pay",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet/voucher/redeem",
+      "handler": "wallet.redeemVoucher",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet/points/convert",
+      "handler": "wallet.convertPoints",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/wallets",
+      "handler": "admin.listWallets",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/wallet/:userId",
+      "handler": "admin.getWalletDetail",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/wallet/adjust",
+      "handler": "admin.adjustBalance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/wallet/freeze",
+      "handler": "admin.freezeWallet",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/wallet/transactions",
+      "handler": "admin.getAllTransactions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/wallet/refund",
+      "handler": "admin.refundTransaction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/wallet/reports",
+      "handler": "admin.getReports",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/wallet/voucher/create",
+      "handler": "admin.createVoucher",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

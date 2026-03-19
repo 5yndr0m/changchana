@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "name": "notification",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "message",
+        "promotion",
+        "invitation"
+      ],
+      "required": true,
+      "default": "message"
+    },
+    "sending_method": {
+      "type": "enumeration",
+      "enum": [
+        "inbox_push",
+        "inbox",
+        "push"
+      ],
+      "default": "inbox_push",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "prepare",
+        "sending",
+        "completed",
+        "failed"
+      ],
+      "default": "prepare",
+      "required": true
+    },
+    "sent_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "read_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "delete_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "cover_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

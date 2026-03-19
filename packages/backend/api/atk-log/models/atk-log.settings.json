@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "atk_logs",
+  "info": {
+    "name": "ATK Log",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "via": "atk_logs",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "approved",
+        "rejected"
+      ],
+      "required": true
+    },
+    "expired_at": {
+      "type": "datetime"
+    },
+    "branch": {
+      "model": "branch"
+    }
+  }
+}

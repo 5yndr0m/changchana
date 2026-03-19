@@ -1,0 +1,16 @@
+FROM node:14-bullseye-slim as build
+
+WORKDIR /usr/src/app
+COPY package.json .
+COPY package-lock.json .
+COPY yarn.lock .
+
+RUN yarn install
+RUN NODE_ENV=production yarn build
+
+COPY . .
+
+RUN printf "ls\nNODE_ENV=production yarn start\n" > entrypoint.sh
+
+EXPOSE 7000
+CMD ["/bin/sh", "entrypoint.sh"]

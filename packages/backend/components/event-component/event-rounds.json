@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_event_rounds_event_rounds",
+  "info": {
+    "name": "Event rounds",
+    "icon": "calendar-check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    }
+  }
+}

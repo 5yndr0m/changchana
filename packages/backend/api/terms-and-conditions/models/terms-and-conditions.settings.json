@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_and_conditions",
+  "info": {
+    "name": "Terms & Conditions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.faq"
+    }
+  }
+}

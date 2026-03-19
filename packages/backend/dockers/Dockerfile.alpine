@@ -1,0 +1,28 @@
+FROM node:14-alpine as build
+
+ENV SHARP_VERSION 0.32.5
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app
+
+RUN npm install
+
+RUN	apk --no-cache add libpng librsvg libgsf giflib libjpeg-turbo musl \
+	&& apk add vips fftw-dev build-base --update-cache  --repository https://alpine.global.ssl.fastly.net/alpine/edge/testing/  --repository https://alpine.global.ssl.fastly.net/alpine/edge/main \
+	&& apk --no-cache add --virtual .build-dependencies g++ make python3 curl tar gtk-doc gobject-introspection expat-dev glib-dev libpng-dev libjpeg-turbo-dev giflib-dev librsvg-dev  \
+	&& su node \
+	&& npm install sharp@${SHARP_VERSION} --production --unsafe-perm\
+	&& chown node:node /usr/local/lib/node_modules -R \
+	&& apk del .build-dependencies
+
+RUN NODE_ENV=production npm run build
+
+FROM node:14-alpine as base
+WORKDIR /usr/src/app
+
+COPY --from=build /usr/src/app .
+RUN printf "ls\nNODE_ENV=production npm run start\n" > entrypoint.sh
+RUN ls -al
+
+EXPOSE 7000
+CMD ["/bin/sh", "entrypoint.sh"]

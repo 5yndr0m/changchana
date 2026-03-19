@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "process_transactions",
+  "info": {
+    "name": "Process Transactions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "transaction_key": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

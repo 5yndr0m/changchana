@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "atk_managements",
+  "info": {
+    "name": "ATK Management",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Reward": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atk-management.reward"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "name": "Home Page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.hero"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.features"
+    },
+    "blessings": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.blessings"
+    },
+    "news": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.news"
+    }
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/api/signup",
+      "handler": "api.signup",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/change-password",
+      "handler": "api.changePassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/change-profile-image",
+      "handler": "api.changeProfileImage",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/generate-qr",
+      "handler": "api.generateQR",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/app-init",
+      "handler": "api.appInit",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/init",
+      "handler": "api.init",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/create-booking",
+      "handler": "api.createBooking",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/get-bookings",
+      "handler": "api.getBookings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/cancel-booking",
+      "handler": "api.cancelBooking",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/count-bookings",
+      "handler": "api.countBookings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/create-log",
+      "handler": "api.createLog",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/staff/signin",
+      "handler": "api.staffSignin",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/otp/request",
+      "handler": "api.requestOTP",
+      "config": {
+        "policies": [
+          "global::validateBasicAuthen"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/otp/verify",
+      "handler": "api.verifyOTP",
+      "config": {
+        "policies": [
+          "global::validateBasicAuthen"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/check-user",
+      "handler": "api.checkUser",
+      "config": {
+        "policies": [
+          "global::validateBasicAuthen"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/forget-password",
+      "handler": "api.forgetPassword",
+      "config": {
+        "policies": [
+          "global::validateBasicAuthen"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/otp-verify-forget-password",
+      "handler": "api.otpVerifyForgetPassword",
+      "config": {
+        "policies": [
+          "global::validateBasicAuthen"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/point-reduction",
+      "handler": "api.pointReduction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/confirm-vaccinated",
+      "handler": "api.confirmVaccinated",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/check-vaccinated/:id",
+      "handler": "api.checkVaccinatedSubmitted",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/export-csv",
+      "handler": "api.exportCSV",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/users/check-out",
+      "handler": "api.checkOut",
+      "config": {
+        "policies": ["global::validateProcessTransaction"]
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/user",
+      "handler": "api.deleteAccount",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/wallets",
+      "handler": "api.listWallets",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/wallet/adjust",
+      "handler": "api.adjustBalance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/wallet/freeze",
+      "handler": "api.freezeWallet",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/wallet/voucher/create",
+      "handler": "api.createVoucher",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/transactions",
+      "handler": "api.getAllTransactions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/refund",
+      "handler": "api.refundTransaction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/reports",
+      "handler": "api.getReports",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/wallet/:userId",
+      "handler": "api.getWalletDetail",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/transfer",
+      "handler": "api.transferFunds",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/redeem-points",
+      "handler": "api.redeemPoints",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/transfers",
+      "handler": "api.getUserTransfers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/point-redemptions",
+      "handler": "api.getUserPointRedemptions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/transfers",
+      "handler": "api.getAllTransfers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/point-redemptions",
+      "handler": "api.getAllPointRedemptions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/transfer/cancel",
+      "handler": "api.cancelTransfer",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/point-redemption/approve",
+      "handler": "api.approvePointRedemption",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet-admin/point-redemption/reject",
+      "handler": "api.rejectPointRedemption",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet-admin/transfer-settings",
+      "handler": "api.getTransferSettings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/wallet-admin/transfer-settings",
+      "handler": "api.updateTransferSettings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/balance",
+      "handler": "api.getWalletBalance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/transactions",
+      "handler": "api.getWalletTransactions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/payment/create-source",
+      "handler": "api.createPaymentSource",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/payment/status/:chargeId",
+      "handler": "api.checkPaymentStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/wallet/payment/webhook",
+      "handler": "api.handlePaymentWebhook",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/wallet/payment/methods",
+      "handler": "api.getPaymentMethods",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

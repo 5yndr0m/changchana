@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/inboxes",
+      "handler": "inbox.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/inboxes/count",
+      "handler": "inbox.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/inboxes",
+      "handler": "inbox.findByUserID",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/inboxes/:id",
+      "handler": "inbox.findByID",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/inboxes/:id",
+      "handler": "inbox.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/inboxes",
+      "handler": "inbox.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/inboxes/activity",
+      "handler": "inbox.updateActivity",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/inboxes/:id",
+      "handler": "inbox.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/inboxes/:id",
+      "handler": "inbox.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

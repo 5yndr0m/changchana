@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_news_page_heroes",
+  "info": {
+    "name": "hero",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

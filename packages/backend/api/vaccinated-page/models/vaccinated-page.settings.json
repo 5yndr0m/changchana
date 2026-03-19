@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "vaccinated_pages",
+  "info": {
+    "name": "Vaccinated Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vaccinated-page.vaccinated-hero"
+    },
+    "contents": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vaccinated-page.vaccinated-content"
+    }
+  }
+}

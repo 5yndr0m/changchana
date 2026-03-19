@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/atk-logs",
+      "handler": "atk-log.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/atk-logs/count",
+      "handler": "atk-log.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/atk-logs/:id",
+      "handler": "atk-log.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/atk-logs",
+      "handler": "atk-log.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/atk-logs/:id",
+      "handler": "atk-log.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/atk-logs/:id",
+      "handler": "atk-log.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/atk-logs/report/:type",
+      "handler": "atk-log.exportReport",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

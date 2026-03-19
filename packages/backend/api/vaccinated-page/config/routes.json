@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vaccinated-page",
+      "handler": "vaccinated-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vaccinated-page",
+      "handler": "vaccinated-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vaccinated-page",
+      "handler": "vaccinated-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

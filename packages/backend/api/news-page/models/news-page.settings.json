@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_pages",
+  "info": {
+    "name": "News Page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "news-page.hero"
+    }
+  }
+}

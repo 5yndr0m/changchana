@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fully_bookeds",
+  "info": {
+    "name": "Fully Booked",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "branch": {
+      "model": "branch"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "full",
+        "event",
+        "closed"
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "name": "Menu",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cover_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "menu_sub_category": {
+      "model": "menu-sub-category",
+      "via": "menus"
+    },
+    "menu_category": {
+      "model": "menu-category",
+      "via": "menus"
+    },
+    "branches": {
+      "via": "menus",
+      "collection": "branch",
+      "dominant": true
+    }
+  }
+}

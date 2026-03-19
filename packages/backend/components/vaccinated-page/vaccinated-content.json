@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_vaccinated_page_vaccinated_contents",
+  "info": {
+    "name": "vaccinated_content",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

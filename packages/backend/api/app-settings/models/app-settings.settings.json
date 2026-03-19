@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "app_settings",
+  "info": {
+    "name": "App Settings",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "announcement": {
+      "type": "component",
+      "repeatable": false,
+      "component": "website-settings.announcement"
+    },
+    "booking_conditions": {
+      "type": "text"
+    },
+    "server_status": {
+      "type": "enumeration",
+      "enum": [
+        "live",
+        "maintenance"
+      ],
+      "required": true,
+      "default": "live"
+    },
+    "line": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}

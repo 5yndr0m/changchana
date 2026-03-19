@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "point_logs",
+  "info": {
+    "name": "Point Logs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "amount": {
+      "type": "integer"
+    },
+    "issue_by": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "target_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "remark": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_branch_booking_remarks",
+  "info": {
+    "name": "booking_remarks",
+    "icon": "braille"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/users-deleteds",
+      "handler": "users-deleted.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users-deleteds/count",
+      "handler": "users-deleted.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users-deleteds/:id",
+      "handler": "users-deleted.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/users-deleteds",
+      "handler": "users-deleted.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/users-deleteds/:id",
+      "handler": "users-deleted.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/users-deleteds/:id",
+      "handler": "users-deleted.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

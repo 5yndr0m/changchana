@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_settings",
+  "info": {
+    "name": "Website Settings",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "website-settings.footer"
+    },
+    "call_to_action": {
+      "type": "component",
+      "repeatable": false,
+      "component": "website-settings.call-to-action"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "website-settings.seo"
+    }
+  }
+}

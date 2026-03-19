@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inboxes",
+  "info": {
+    "name": "Inbox",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "notification": {
+      "model": "notification"
+    },
+    "read_at": {
+      "type": "datetime"
+    },
+    "deleted_at": {
+      "type": "datetime"
+    }
+  }
+}

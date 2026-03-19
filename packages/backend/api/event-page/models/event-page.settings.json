@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "event-page",
+  "info": {
+    "name": "Event Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-page.hero",
+      "required": true
+    },
+    "highlight_events": {
+      "collection": "event"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

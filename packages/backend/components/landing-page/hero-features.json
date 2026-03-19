@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_landing_page_hero_features",
+  "info": {
+    "name": "hero_features",
+    "icon": "asterisk"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/event-transactions",
+      "handler": "event-transaction.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/event-transactions/count",
+      "handler": "event-transaction.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/event-transactions/:id",
+      "handler": "event-transaction.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/event-transactions/:id/status",
+      "handler": "event-transaction.getPaymentStatusOld",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/event-transactions/request/:id/status",
+      "handler": "event-transaction.getPaymentStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/event-transactions",
+      "handler": "event-transaction.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/event-transactions/:id",
+      "handler": "event-transaction.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/event-transactions/:id",
+      "handler": "event-transaction.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/event-transaction/booking-today",
+      "handler": "event-transaction.bookingToday",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/event-transaction/:id/refund",
+      "handler": "event-transaction.refund",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/users/tickets",
+      "handler": "event-transaction.getUserTickets",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/users/tickets/cancel",
+      "handler": "event-transaction.cancelUserTicket",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/omise/events",
+      "handler": "event-transaction.omiseEvent",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

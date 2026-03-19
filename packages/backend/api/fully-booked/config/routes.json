@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/fully-bookeds",
+      "handler": "fully-booked.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fully-bookeds/count",
+      "handler": "fully-booked.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fully-bookeds/:id",
+      "handler": "fully-booked.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/fully-bookeds",
+      "handler": "fully-booked.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/fully-bookeds/:id",
+      "handler": "fully-booked.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/fully-bookeds/:id",
+      "handler": "fully-booked.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/fully-bookeds/branchs/available",
+      "handler": "fully-booked.branchAvailable",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

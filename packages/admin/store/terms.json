@@ -1,0 +1,52 @@
+{
+  "terms": [
+    {
+      "slug": "add",
+      "value": "เพิ่ม"
+    },
+    {
+      "slug": "create",
+      "value": "สร้าง"
+    },
+    {
+      "slug": "remove",
+      "value": "ลบ"
+    },
+    {
+      "slug": "save",
+      "value": "บันทึก"
+    },
+    {
+      "slug": "cancel",
+      "value": "ยกเลิก"
+    },
+    {
+      "slug": "upload",
+      "value": "อัพโหลด"
+    },
+    {
+      "slug": "all-images",
+      "value": "รูปทั้งหมด"
+    },
+    {
+      "slug": "export-csv",
+      "value": "Export CSV"
+    },
+    {
+      "slug": "search",
+      "value": "ค้นหา"
+    },
+    {
+      "slug": "add-fully-booked",
+      "value": "Make as Fully Booked"
+    },
+    {
+      "slug": "edit-zone",
+      "value": "แก้ไขโซน"
+    },
+    {
+      "slug": "refund",
+      "value": "คืนเงิน"
+    }
+  ]
+}
