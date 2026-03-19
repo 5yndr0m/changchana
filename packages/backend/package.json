@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider strapi build",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -43,7 +43,7 @@
     "uuid": "fab46081-b43a-4c58-a521-1968bd3fe136"
   },
   "engines": {
-    "node": "14.x",
+    "node": "16.x",
     "npm": "^8.0.0"
   },
   "license": "MIT"
