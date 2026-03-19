@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "jquery": "^3.7.1",
     "json-2-csv": "3.14.1",
     "knex": "0.21.18",
     "messagebird": "3.6.1",
