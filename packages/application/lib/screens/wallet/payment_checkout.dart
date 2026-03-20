@@ -1,5 +1,6 @@
 import 'package:chongchana/constants/colors.dart';
 import 'package:chongchana/screens/wallet/top_up.dart';
+import 'package:chongchana/services/wallet_service.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -16,7 +17,7 @@ class WalletPaymentCheckoutScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _WalletPaymentCheckoutScreenState createState() =>
+  State<WalletPaymentCheckoutScreen> createState() =>
       _WalletPaymentCheckoutScreenState();
 }
 
@@ -90,23 +91,34 @@ class _WalletPaymentCheckoutScreenState
     );
   }
 
-  void _processPayment() {
-    // Show loading
+  Future<void> _processPayment() async {
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => const Center(
-        child: CircularProgressIndicator(),
-      ),
+      builder: (_) => const Center(child: CircularProgressIndicator()),
     );
 
-    // Simulate payment processing
-    Future.delayed(const Duration(seconds: 2), () {
+    try {
+      await WalletService.payWithWallet(
+        amount: _calculateTotal(),
+        description: 'Payment at ${widget.branchName}',
+        usePoints: usePoints ? 1 : 0,
+      );
+
       if (!mounted) return;
-      Navigator.pop(context); // Close loading
-      if (!mounted) return;
+      Navigator.pop(context); // close loading
+
       _showPaymentSuccess();
-    });
+    } catch (e) {
+      if (!mounted) return;
+      Navigator.pop(context); // close loading
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString().replaceFirst('Exception: ', '')),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   void _showPaymentSuccess() {

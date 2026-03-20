@@ -1,13 +1,17 @@
 import 'package:chongchana/constants/colors.dart';
+import 'package:chongchana/screens/wallet/payment_status_screen.dart';
+import 'package:chongchana/screens/wallet/promptpay_qr_screen.dart';
+import 'package:chongchana/services/wallet_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TopUpScreen extends StatefulWidget {
   const TopUpScreen({Key? key}) : super(key: key);
 
   @override
-  _TopUpScreenState createState() => _TopUpScreenState();
+  State<TopUpScreen> createState() => _TopUpScreenState();
 }
 
 class _TopUpScreenState extends State<TopUpScreen> {
@@ -56,7 +60,7 @@ class _TopUpScreenState extends State<TopUpScreen> {
     }
   }
 
-  void _continue() {
+  Future<void> _continue() async {
     if (selectedAmount == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -97,83 +101,79 @@ class _TopUpScreenState extends State<TopUpScreen> {
       return;
     }
 
-    // Show success confirmation
+    // Show loading
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => AlertDialog(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        title: Row(
-          children: [
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                color: Colors.green.shade50,
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.check_circle,
-                color: Colors.green,
-                size: 32,
-              ),
-            ),
-            const SizedBox(width: 12),
-            const Expanded(
-              child: Text(
-                'Top-up Successful!',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Amount: ฿${_formatAmount(selectedAmount!)}',
-              style: const TextStyle(fontSize: 15),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Payment Method: ${selectedPaymentMethod!.replaceAll('_', ' ').toUpperCase()}',
-              style: const TextStyle(fontSize: 15),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              'Your wallet has been topped up successfully.',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey.shade600,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context); // Close dialog
-              Navigator.pop(context); // Go back to wallet overview
-            },
-            child: const Text(
-              'Done',
-              style: TextStyle(
-                color: ChongjaroenColors.secondaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
+
+    try {
+      // Resolve the actual Omise payment method key
+      final String omiseMethod = selectedPaymentMethod!.startsWith('mobile_banking_')
+          ? selectedPaymentMethod!
+          : selectedPaymentMethod == 'mobile_banking'
+              ? 'mobile_banking_kbank' // fallback if parent selected
+              : 'promptpay';
+
+      final result = await WalletService.createPaymentSource(
+        amount: selectedAmount!,
+        paymentMethod: omiseMethod,
+        returnUri: 'chongchana://topup-return',
+      );
+
+      if (!mounted) return;
+      Navigator.pop(context); // close loading
+
+      final chargeId = result['chargeId'] as String;
+
+      if (omiseMethod == 'promptpay') {
+        // PromptPay: show QR code screen
+        final scannableCode = result['scannable_code'] as Map<String, dynamic>?;
+        final qrImageUrl = scannableCode?['image']?['download_uri'] as String?;
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => PromptPayQRScreen(
+              chargeId: chargeId,
+              amount: selectedAmount!,
+              qrImageUrl: qrImageUrl,
             ),
           ),
-        ],
-      ),
-    );
+        );
+      } else {
+        // Mobile banking: open authorize URL in browser, then show status screen
+        final authorizeUri = result['authorizeUri'] as String?;
+        if (authorizeUri != null) {
+          final uri = Uri.parse(authorizeUri);
+          if (await canLaunchUrl(uri)) {
+            await launchUrl(uri, mode: LaunchMode.externalApplication);
+          }
+        }
+
+        if (!mounted) return;
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => PaymentStatusScreen(
+              chargeId: chargeId,
+              amount: selectedAmount!,
+              paymentMethod: omiseMethod,
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      if (!mounted) return;
+      Navigator.pop(context); // close loading
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Payment error: ${e.toString()}'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   @override

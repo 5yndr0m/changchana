@@ -51,6 +51,9 @@ dependencies:
   # For managemtn QR Code
   qr_flutter: ^4.1.0
 
+  # For date/number formatting
+  intl: ^0.20.2
+
   # For management datetime format
   jiffy: ^6.3.2
 
