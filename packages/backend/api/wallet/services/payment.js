@@ -6,8 +6,15 @@
  */
 
 const omise = require('omise')({
+// publicKey is required alongside secretKey.
+// The Omise SDK routes source creation (PromptPay, mobile banking) through
+// publicKey, while charges and refunds use secretKey. Without publicKey,
+// omise.sources.create() sends an empty auth header and Omise returns
+// "authentication failed". See: node_modules/omise/lib/resources/Source.js
+const omise = require("omise")({
   secretKey: process.env.OMISE_SECRET_KEY,
-  omiseVersion: '2019-05-29',
+  publicKey: process.env.OMISE_PUBLIC_KEY,
+  omiseVersion: "2019-05-29",
 });
 
 module.exports = {
